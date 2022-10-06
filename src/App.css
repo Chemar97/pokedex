@@ -1,0 +1,548 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+:root {
+  --Normal: rgb(168, 160, 144);
+  --Fire: rgb(240, 80, 48);
+  --Water: rgb(0, 160, 233);
+  --Grass: rgb(17, 184, 0);
+  --Electric: rgb(248, 208, 48);
+  --Ice: rgb(0, 77, 123);
+  --Fighting: rgb(160, 80, 56);
+  --Poison: rgb(99, 0, 92);
+  --Ground: rgb(234, 214, 164);
+  --Flying: rgb(152, 168, 240);
+  --Psychic: rgb(248, 112, 160);
+  --Bug: rgb(168, 184, 32);
+  --Rock: rgb(184, 160, 88);
+  --Ghost: rgb(96, 96, 176);
+  --Dark: rgb(35, 12, 46);
+  --Dragon: rgb(160, 80, 56);
+  --Steel: rgb(168, 168, 192);
+  --Fairy: rgb(231, 159, 231);
+  --BackgroundBar: #dedede;
+}
+
+.pokedex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-card-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1rem;
+  width: 80%;
+}
+
+.pokemon-info-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 15%;
+  column-gap: .5rem;
+}
+
+.pokemon-sprite{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  top: 5%;
+  left: 20%;
+}
+
+.pokeInfo{
+  grid-column: 1/ 2 ;
+  grid-row: 2 / 3;
+  height: 30vh;
+}
+
+.pokemon-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  color: black;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 312px;
+}
+
+.pokemon-name-id{
+  grid-row: 2/3 ;
+  padding: 0.5rem;
+}
+
+.pokemon-name-id>h2{
+  margin: 0px;
+}
+
+.pokemon-name-id>p{
+  margin: 0px;
+}
+
+.pokemon-weight-height{
+  grid-row: 1/3 ;
+  line-height: 6rem;
+}
+
+
+.stats-container{
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  width: 60vh;
+  height: 312px;
+  padding: 0px;
+  row-gap: .5rem;
+}
+
+.stats-container>h2{
+  grid-column: 1 / 3;
+}
+
+.stats-container>b{
+  background-color: gainsboro;
+  font-size: 10px;
+  width: 50px;
+  height: 20px;
+  margin-left: 40px;
+  margin-top: 2px;
+}
+
+.grafico {
+  position: relative;
+  width: 90%;
+  height: 18px;
+  overflow: hidden;
+  background-color: var(--BackgroundBar);
+  padding: 2px;
+}
+
+.grafico .barra {
+  display: block;
+  position: relative;
+  top: -2px;
+  left: -2px;
+  background: var(--Electric);
+  text-align: center;
+  height: 30px;
+  line-height: 1.4em;
+}
+
+.grafico2 {
+  position: relative;
+  width: 90%;
+  height: 18px;
+  overflow: hidden;
+  background-color: var(--BackgroundBar);
+  padding: 2px;
+}
+
+.grafico2 .barra2 {
+  display: block;
+  position: relative;
+  top: -2px;
+  left: -2px;
+  background: var(--Electric);
+  text-align: center;
+  height: 30px;
+  line-height: 1.4em;
+}
+
+
+.grafico3 {
+  position: relative;
+  width: 90%;
+  height: 18px;
+  overflow: hidden;
+  background-color: var(--BackgroundBar);
+  padding: 2px;
+}
+
+.grafico3 .barra3 {
+  display: block;
+  position: relative;
+  top: -2px;
+  left: -2px;
+  background: var(--Electric);
+  text-align: center;
+  height: 30px;
+  line-height: 1.4em;
+}
+
+.logo {
+  width: 320px;
+  height: 110px;
+}
+
+.card {
+  padding: 0rem;
+  margin: 1rem;
+  width: 250px;
+  height: 400px;
+}
+
+.pokeInfo {
+  grid-column: 1 / 3;
+  display: flex;
+}
+
+.type-container {
+  background-color: white;
+  width: 50%;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding: 1.5rem;
+  margin-right: .5rem;
+}
+
+.type-container>h3 {
+  grid-column: 1 / 3;
+  margin: 15px
+}
+
+.type-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+
+  width: 50%;
+  height: 10%;
+}
+
+div{
+  border-radius: 10px;
+}
+
+.abilities-container {
+  background-color: white;
+  width: 50%;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding: 1.5rem;
+
+}
+
+.abilities-container>h3 {
+  grid-column: 1 / 3;
+  margin: 0px;
+}
+
+.abilities-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  box-shadow: 0px 0px 1px black;
+  width: 60%;
+  height: 50%;
+  margin: 0px;
+}
+
+.Movements-container {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  margin: 0px;
+  margin-left: 0.5rem;
+}
+
+.stats-container {
+  color: black;
+  background-color: white;
+  width: 100%;
+}
+
+.moves-list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 430px;
+  overflow-y: scroll;
+}
+
+.move-item {
+  color: black;
+  background-color: white;
+  list-style: none;
+  padding-bottom: 1rem;
+}
+
+
+.card{
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 250ms ease;
+}
+
+.card:hover{
+  transform: scale(1.05);
+}
+
+.card:hover,
+.card:focus{
+  background-color: yellowgreen;
+}
+
+.card>h2{
+  margin: 0px;
+}
+
+
+
+.card-content{
+  padding: 0.5rem;
+  border-radius: 10px;
+  background: rgba(53, 52, 52, 0);
+  transform: translateY(110%);
+  transition: transform 500ms ease;
+}
+
+.card:hover .card-content{
+  transform: translateY(0);
+  background: rgba(53, 52, 52, 0.5);
+}
+
+.card-content>p{
+  margin: 0px;
+}
+
+.card-content>h3{
+  margin: 0px;
+}
+
+.card>img{
+  width: 155px;
+  height: 155px;
+}
+
+.card-title{
+  position: relative;
+}
+
+.card-title::after{
+  content: "";
+  position: absolute;
+  height: 3px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background: var(--Grass);
+  transform: scaleX(0);
+  transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after{
+  transform: scaleX(1);
+}
+
+.search-bar-container{
+  display: flex;
+  gap: 1rem;
+}
+
+.search-bar{
+  width: 250px;
+  height: 25px;
+  border-radius: 0.5rem;
+}
+
+.searchBotton{
+  width: 70px;
+  border-radius: 1rem;
+  transition: transform 250ms ease;
+}
+
+.searchBotton:hover{
+  cursor: pointer;
+  background-color: yellowgreen;
+  transform: scale(1.3);
+}
+
+.filter-input{
+  margin-bottom: 1rem;
+}
+
+.index-buttons{
+  margin-top: 1rem;
+  display: flex;
+  gap: .5rem;
+}
+
+.index-buttons>button{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 250ms ease;
+}
+
+.index-buttons>button:hover{
+  cursor: pointer;
+  background-color: yellowgreen;
+  transform: scale(1.3);
+}
+
+.user-bar{
+  width: 250px;
+  height: 25px;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+
+.user-botton{
+  width: 70px;
+  height: 30px;
+  border-radius: 1rem;
+  transition: transform 250ms ease;
+}
+
+.user-botton:hover{
+  cursor: pointer;
+  background-color: yellowgreen;
+  transform: scale(1.3);
+}
+
+
+.home{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: transparent;
+  background-color: var(--Grass);
+  position: absolute;
+  right: 25%;
+  top: 20%;
+}
+
+.back{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: transparent;
+  background-color: var(--BackgroundBar);
+  position: absolute;
+  left: 25%;
+  top: 15%;
+}
+.normal {
+  background-color: var(--Normal);
+  margin: 0;
+  padding: 1rem;
+}
+
+.fire {
+  background-color: var(--Fire);
+  margin: 0;
+  padding: 1rem;
+}
+
+.water {
+  background-color: var(--Water);
+  margin: 0;
+  padding: 1rem;
+}
+
+.grass {
+  background-color: var(--Grass);
+  margin: 0;
+  padding: 1rem;
+}
+
+.electric {
+  background-color: var(--Electric);
+  margin: 0;
+  padding: 1rem;
+}
+
+.ice {
+  background-color: var(--Ice);
+  margin: 0;
+  padding: 1rem;
+}
+
+.fighting {
+  background-color: var(--Fighting);
+  margin: 0;
+  padding: 1rem;
+}
+
+.poison {
+  background-color: var(--Poison);
+  margin: 0;
+  padding: 1rem;
+}
+
+.ground {
+  background-color: var(--Ground);
+  margin: 0;
+  padding: 1rem;
+}
+
+.flying {
+  background-color: var(--Flying);
+  margin: 0;
+  padding: 1rem;
+}
+
+.psychic {
+  background-color: var(--Psychic);
+  margin: 0;
+  padding: 1rem;
+}
+
+.bug {
+  background-color: var(--Bug);
+  margin: 0;
+  padding: 1rem;
+}
+
+.rock {
+  background-color: var(--Rock);
+  margin: 0;
+  padding: 1rem;
+}
+
+.ghost {
+  background-color: var(--Ghost);
+  margin: 0;
+  padding: 1rem;
+}
+
+.dark {
+  background-color: var(--Dark);
+  margin: 0;
+  padding: 1rem;
+}
+
+.dragon {
+  background-color: var(--Dragon);
+  margin: 0;
+  padding: 1rem;
+}
+
+.steel {
+  background-color: var(--Steel);
+  margin: 0;
+  padding: 1rem;
+}
+
+.fairy {
+  background-color: var(--Fighting);
+  margin: 0;
+  padding: 1rem;
+}
