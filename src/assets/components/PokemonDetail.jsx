@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import pokelogo from '../img/Poke.webp'
+import pokelogo from '../img/poke.webp'
 import { useNavigate } from 'react-router-dom';
 const PokemonDetail = () => {
     const navigate = useNavigate()
