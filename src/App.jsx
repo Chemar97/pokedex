@@ -11,7 +11,7 @@ function App() {
   return (
     <HashRouter>
       <div className="App">
-        <section pokeball>
+        <section className='pokeball'>
           <img src={pokeball} alt="" className='rotate rotate-1'/>
           <img src={pokeball} alt="" className='rotate rotate-2'/>
         </section>

@@ -11,12 +11,12 @@ const PokemonCard = ({url}) => {
         axios.get(url)
             .then(res => setPokemon(res.data))
     }, [])
-    // console.log(pokemon)
+    // console.log(pokemon.sprites?.other['official-artwork'])
 
     return (
         <div className={'card ' + pokemon.types?.[0].type.name} onClick={() => navigate(`/pokedex/${pokemon.id}`)}>
             <h2>{pokemon.name}</h2>
-            <img src={pokemon.sprites?.other.dream_world.front_default} 
+            <img src={pokemon.sprites?.other['official-artwork'].front_default} 
                 alt="pokemon-img"
             />
             <section className='card-content'>

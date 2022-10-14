@@ -11,7 +11,7 @@ const Pokedex = () => {
     const name = useSelector(state => state.username)
     const [pokemonList, setPokemonList] = useState([])
     const [pokemonInput, setPokemonInput] = useState("")
-    
+
 
     const navigate = useNavigate()
     useEffect(() => {
@@ -39,32 +39,48 @@ const Pokedex = () => {
 
     for (let i = 1; i <= totalPages; i++) {
         pagesNumbers.push(i);
-        
+
     }
 
     const [maxIndex, setMaxIndex] = useState(5)
     const [minIndex, setMinIndex] = useState(0)
 
-    if(page !== totalPages){
-        if((page%2) === 0){
-            if(page === maxIndex){
-                setMaxIndex(maxIndex + 4)
-                setMinIndex(minIndex + 3)
-            }
-        }else{
-            if(page === maxIndex){
-                setMaxIndex(maxIndex + 5)
-                setMinIndex(minIndex + 4)
-            }
-        }
-    }
+
+
+    // if((page%2) === 0){
+    //     if(page === maxIndex){
+    //         setMaxIndex(maxIndex + 4)
+    //         setMinIndex(minIndex + 3)
+    //     }
+    // }else{
+    //     if(page === maxIndex){
+    //         setMaxIndex(maxIndex + 5)
+    //         setMinIndex(minIndex + 4)
+    //     }
+    // }
+
+
+
+    // if((page%2) === 0){
+    //         if(page === minIndex){
+    //             setMaxIndex(maxIndex - 4)
+    //             setMinIndex(minIndex - 3)
+    //         }
+    // }else{
+    //     if(page === maxIndex){
+    //         setMaxIndex(maxIndex - 5)
+    //         setMinIndex(minIndex - 4)
+    //     }
+    // }
+
 
     const returnHom = () => {
         navigate('/')
     }
-    
 
-     const pagesNumbersLimit = pagesNumbers.slice(minIndex, maxIndex)
+    console.log(page)
+    const pagesNumbersLimit = pagesNumbers.slice(minIndex, maxIndex)
+    console.log(pagesNumbersLimit)
 
     return (
         <div className='pokedex'>
@@ -79,7 +95,7 @@ const Pokedex = () => {
                 searchPokemon={searchPokemon}
             />
 
-            <PokemonFilterType setPokemonList={setPokemonList}/> {/* Componente para realizar el filtrado por tipo */}
+            <PokemonFilterType setPokemonList={setPokemonList} /> {/* Componente para realizar el filtrado por tipo */}
 
             <section className="pokemon-card-container">
                 {
@@ -95,23 +111,60 @@ const Pokedex = () => {
                 >
                     Prev page
                 </button>
-                {
+
+                <button className={page===1&&'pageAct'} onClick={() => setPage(1)}>
+                    1
+                </button>
+                {/* {
                     pagesNumbersLimit.map(number => (
 
-                        <button onClick={() => setPage(number)}
+                        <button className={number+1!=page? 'pageAct':'page' }onClick={() => setPage(number + 1)}
                             key={number}
                         >
-                            {number}
+
+                            {number + 1}
+                    
                         </button>
                     ))
+                } */}
+
+
+                {  page>2 ? (
+                    <>
+                        <button onClick={() => setPage(page-1)}>
+                            {page-1}
+                        </button>
+
+                        <button className='pageAct'>
+                            {page}
+                        </button>
+
+                        <button className={(page===totalPages&&'lastButton')||(page===totalPages-1&&'lastButton')}  onClick={() => setPage(page+1)}>
+                            {page+1}
+                        </button>
+                    </>
+                )  : (
+                    <>
+                        <button className={page===2&&'pageAct'} onClick={() => setPage(2)}>
+                            {2}
+                        </button>
+
+                        <button  onClick={() => setPage(3)}>
+                            {3}
+                        </button>
+                    </>)       
                 }
+
+                <button className={page===totalPages&&'lastButton'}  onClick={() => setPage(totalPages)}>
+                    {totalPages}
+                </button>
                 <button onClick={() => setPage(page + 1)}
                     disabled={page === totalPages}
                 >
                     Next page
                 </button>
             </section>
-                
+
         </div>
     );
 };

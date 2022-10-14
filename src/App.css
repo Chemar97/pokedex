@@ -546,3 +546,12 @@ div{
   margin: 0;
   padding: 1rem;
 }
+
+.pageAct{
+  background-color: blue;
+}
+
+
+.lastButton{
+  display: none;
+}
